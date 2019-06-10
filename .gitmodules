@@ -1,0 +1,3 @@
+[submodule "yuribyte"]
+	path = yuribyte
+	url = https://github.com/cryslith/yuribyte.git

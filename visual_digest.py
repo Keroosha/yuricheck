@@ -13,20 +13,20 @@ SIZE = 100
 RATE = 4 / 5
 
 
-def anime_girl(i, size=SIZE):
-    return Image.open('image/example-{}.jpg'.format(60000 + i)).resize((size, size), Image.BOX)
+def byte_to_yuri(i, size=SIZE):
+    return Image.open('yuribyte/twdne-60000/{}.jpg'.format(i)).resize((size, size), Image.BOX)
 
 
 def visual_digest(data, size=SIZE, rate=RATE):
     if rate < 1:
         data = reedsolo(data, rate=rate)
-    images = [anime_girl(i, size=size) for i in data]
+    images = [byte_to_yuri(i, size=size) for i in data]
     deterministic_shuffle(images)
     return compose(images, size)
 
 
 def deterministic_shuffle(l):
-    r = random.Random(x='anime;brain?reset!') # deterministic seed
+    r = random.Random(x='anime;brain?reset!') # fixed seed
     r.shuffle(l)
 
 
